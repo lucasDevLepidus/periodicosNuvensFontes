@@ -1,0 +1,78 @@
+baseURL: 'https://periodicos.emnuvens.com.br/'
+languageCode: pt-br
+defaultContentLanguage: pt
+title: Periódicos em Nuvens | Soluções para revistas acadêmicas em SEER / OJS
+theme: cayman-hugo-theme
+
+params:
+  project_name: Periódicos em Nuvens
+  project_subname: Soluções para revistas acadêmicas em SEER / OJS
+
+  css: /assets/scss/
+
+  logos:
+    logoLepidus: /img/logoLepidusTecnologia.png
+    logoPeriodicoEmNuvens: /img/logoPeriodicoEmNuvens.png
+
+  # Date format for post list and single pages
+  # For more date formats see https://gohugo.io/functions/format/
+  dateFormat: 01-02-2006
+
+  # Footer text, can be markdown
+  footer: Feito com [Hugo](https://gohugo.io/). Baseado no tema [Cayman](https://github.com/zwbetz-gh/cayman-hugo-theme).
+
+  # If true, the CSS/JS for Katex math typesetting are enabled
+  katex: false
+
+  # Breakpoints
+  large_breakpoint: 64em
+  medium_breakpoint: 42em
+
+  # Header colors
+  header_heading_color: '#fff'
+  header_background_color: '#159957'
+  header_background_color_secondary: '#155799'
+
+  # Text colors
+  section_headings_color: '#159957'
+  body_text_color: '#26292a'
+  body_link_color: '#1e6bb8'
+  blockquote_text_color: '#819198'
+
+  # Code colors
+  code_background_color: '#f3f6fa'
+  code_text_color: '#567482'
+
+  # Border colors
+  border_color: '#dce6f0'
+  table_border_color: '#2df321'
+  hr_border_color: '#eff0f1'
+
+  # Meta tags
+  description: 'Soluções para revistas acadêmicas em SEER'
+  author: 'Lepidus Tecnologia'
+  keywords: 'periódicos em nuvens, periódicos, revistas acadêmicas, revistas acadêmicas em SEER, SEER, revistas de universidades'
+  robots: 'index,follow'
+  replyTo: 'contato@lepidus.com.br'
+  contentLanguage: 'pt-br'
+
+menu:
+  nav:
+    - name: O que é
+      url: /o-que-e/
+      weight: 1
+    - name: Quem utiliza
+      url: /clientes/
+      weight: 2
+    - name: Planos
+      url: /planos/
+      weight: 3
+    - name: Serviços
+      url: /servicos/
+      weight: 4
+    - name: Solicitar Orçamento
+      url: /solicitar-orcamento/
+      weight: 5
+    - name: Contratar
+      url: /contratar/
+      weight: 6

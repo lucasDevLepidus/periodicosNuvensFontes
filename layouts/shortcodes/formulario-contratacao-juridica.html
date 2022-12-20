@@ -1,0 +1,179 @@
+<link rel="stylesheet" href="../../assets/scss/cayman.scss" />
+
+<div id="form">
+  <h2>Ficha de Contratação</h2>
+  <label>O periódico ou portal de periódicos já existe?</label>
+  <form
+    action="https://formsubmit.co/89709653efaa93e8228ea0fc00c2d033"
+    method="POST"
+  >
+    <select name="periodico_existente">
+      <option
+        value="Sim, está em outro servidor SEER e quero migrá-lo"
+        selected
+      >
+        Sim, está em outro servidor SEER e quero migrá-lo
+      </option>
+      <option value="Sim, usa outro sistema ou é impresso">
+        Sim, usa outro sistema ou é impresso
+      </option>
+      <option
+        value="Sim, está no Periódico em Nuvens e quero atualizar meu cadastro/aceitar
+      o contato"
+      >
+        Sim, está no Periódico em Nuvens e quero atualizar meu cadastro/aceitar
+        o contato
+      </option>
+      <option value="Não, será criado agora">Não, será criado agora</option>
+    </select>
+
+    <label>
+      Escreva abaixo o nome de seu periódico. Caso seja mais de um, digite um
+      por linha.
+    </label>
+    <textarea name="nomes_dos_periodicos" rows="10"></textarea>
+
+    <label>Endereço de acesso atual, se houver</label>
+    <input type="text" name="endereco_atual_periodico" size="40" />
+
+    <label
+      >Endereço .emnuvens desejado (ex: meuperiodico.emnuvens.com.br)</label
+    >
+    <input type="text" name="endereco_periodico" />
+
+    <p>
+      Se a revista ainda não está no SEER/OJS, indique abaixo os dados da pessoa
+      que irá cadastrar os demais papéis e que poderá fazer a configuração
+      inicial da revista.
+    </p>
+
+    <label>Nome*</label>
+    <input type="text" name="nome" size="40" required />
+
+    <label>E-mail*</label>
+    <input type="email" name="email" size="40" required />
+
+    <label>Condição de pagamento</label>
+    <select name="condicao_pagamento">
+      <option value="Anual (10% de desconto)" selected>
+        Anual (10% de desconto)
+      </option>
+      <option value="Semestral (5% de desconto)">
+        Semestral (5% de desconto)
+      </option>
+      <option value="Mensal">Mensal</option>
+    </select>
+
+    <label>Razão Social*</label>
+    <input type="text" name="razao_social" required />
+
+    <label>Nome Fantasia*</label>
+    <input type="text" name="nome_fantasia" required />
+
+    <label>Endereço*</label>
+    <input type="text" name="endereco" required />
+
+    <label>CNPJ*</label>
+    <input type="text" name="cnpj" required />
+
+    <label>Representante Legal*</label>
+    <input type="text" name="representante_legal" required />
+
+    <label>CPF do representante legal*</label>
+    <input type="text" name="cpf_representante_legal" required />
+
+    <label>Cargo do representante legal*</label>
+    <input type="text" name="cargo_representante_legal" required />
+
+    <label>Telefone (com DDD)*</label>
+    <input type="text" name="telefone_representante_legal" required />
+
+    <h2>Ficha de Contato</h2>
+    <p>
+      Nossos serviços dependem de boa comunicação com os responsáveis diretos
+      por algumas funções na instituição do cliente. Para prestação efetiva dos
+      serviços, solicitamos que nos sejam informados os nomes e e-mails das
+      pessoas que cumprem esses papéis.
+    </p>
+
+    <h3>Papel: Representante da Instituição</h3>
+
+    <label>Nome*</label>
+    <input type="text" name="nome_representante_instituicao" required />
+    <label>Cargo*</label>
+    <input type="text" name="cargo_representante_instituicao" required />
+    <label>E-mail*</label>
+    <input type="email" name="email_representante_instituicao" required />
+    <label>Telefone (com DDD)*</label>
+    <input type="text" name="telefone_representante_instituicao" required />
+
+    <h3>Papel: Responsável técnico</h3>
+
+    <label>Nome*</label>
+    <input type="text" name="nome_responsavel_tecnico" required />
+    <label>Cargo*</label>
+    <input type="text" name="cargo_responsavel_tecnico" required />
+    <label>E-mail*</label>
+    <input type="email" name="email_responsavel_tecnico" required />
+    <label>Telefone (com DDD)*</label>
+    <input type="text" name="telefone_responsavel_tecnico" required />
+
+    <h3>Papel: Responsável financeiro</h3>
+
+    <label>Nome*</label>
+    <input type="text" name="nome_responsavel_financeiro" required />
+    <label>Cargo*</label>
+    <input type="text" name="cargo_responsavel_financeiro" required />
+    <label>E-mail*</label>
+    <input type="email" name="email_responsavel_financeiro" required />
+    <label>Telefone (com DDD)*</label>
+    <input type="text" name="telefone_responsavel_financeiro" required />
+
+    <h2>Contrato</h2>
+    <div class="containerContract">
+      <p class="textContract">
+        Se preferir, uma cópia em PDF do contrato pode ser acessada
+        {{- with .Get 0 -}}
+          <a href="{{ . }}" download> aqui</a>
+        {{- else -}}
+          {{- errorf "The %s shortcode requires a single positional parameter, a URL. See %s" .Name .Position -}}
+        {{- end -}}
+      </p>
+  
+      <div class="embedContract">
+        {{- with .Get 0 -}}
+          <embed src="{{ . }}" type="application/pdf">
+        {{- else -}}
+          {{- errorf "The %s shortcode requires a single positional parameter, a URL. See %s" .Name .Position -}}
+        {{- end -}}
+      </div>
+    </div>
+
+    <div>
+      <input type="checkbox" name="aceite_do_contrato" value="1" required />
+      <label> Li e aceito os termos do contrato.</label>
+    </div>
+
+    <input
+      type="hidden"
+      name="_subject"
+      value="Contratação PeN | Formulário preenchido pelo site"
+    />
+
+    <input
+      type="hidden"
+      name="_url"
+      value="https://periodicos.emnuvens.com.br/contratar/"
+    />
+
+    <input
+      type="hidden"
+      name="_next"
+      value="{{$.Site.BaseURL}}/agradecimento/"
+    />
+
+    <input type="hidden" name="_template" value="table" />
+
+    <button type="submit">Enviar</button>
+  </form>
+</div>

@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="../../assets/scss/cayman.scss" />
+
+<div id="form">
+  <form action="https://formsubmit.co/contato@lepidus.com.br" method="POST">
+    <label>Nome completo</label>
+    <input type="text" name="nome" size="40" required />
+
+    <label>Endereço de e-mail</label>
+    <input type="email" name="email" size="40" required />
+
+    <label>Telefone</label>
+    <input type="text" name="telefone" size="40" required />
+
+    <label>Mensagem</label>
+    <textarea name="mensagem" cols="40" rows="10" required></textarea>
+
+    <input
+      type="hidden"
+      name="_subject"
+      value="Contato PeN | Formulário preenchido pelo site"
+    />
+
+    <input
+      type="hidden"
+      name="_url"
+      value="https://periodicos.emnuvens.com.br/contato/"
+    />
+
+    <input
+      type="hidden"
+      name="_next"
+      value="{{$.Site.BaseURL}}/agradecimento/"
+    />
+
+    <input type="hidden" name="_template" value="table" />
+
+    <button type="submit">Enviar</button>
+    <pre>Retornaremos no endereço de correio eletrônico informado.</pre>
+  </form>
+</div>

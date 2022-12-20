@@ -1,0 +1,126 @@
+<link rel="stylesheet" href="../../assets/scss/cayman.scss" />
+
+<div id="form">
+  <h2>Ficha de Contratação</h2>
+  <label>O periódico ou portal de periódicos já existe?</label>
+  <form
+    action="https://formsubmit.co/89709653efaa93e8228ea0fc00c2d033"
+    method="POST"
+  >
+    <select name="periodico_existente">
+      <option
+        value="Sim, está em outro servidor SEER e quero migrá-lo"
+        selected
+      >
+        Sim, está em outro servidor SEER e quero migrá-lo
+      </option>
+      <option value="Sim, usa outro sistema ou é impresso">
+        Sim, usa outro sistema ou é impresso
+      </option>
+      <option
+        value="Sim, está no Periódico em Nuvens e quero atualizar meu cadastro/aceitar
+      o contato"
+      >
+        Sim, está no Periódico em Nuvens e quero atualizar meu cadastro/aceitar
+        o contato
+      </option>
+      <option value="Não, será criado agora">Não, será criado agora</option>
+    </select>
+
+    <label>
+      Escreva abaixo o nome de seu periódico. Caso seja mais de um, digite um
+      por linha.
+    </label>
+    <textarea name="nomes_dos_periodicos" rows="10"></textarea>
+
+    <label>Endereço de acesso atual, se houver</label>
+    <input type="text" name="endereco_atual_periodico" size="40" />
+
+    <label
+      >Endereço .emnuvens desejado (ex: meuperiodico.emnuvens.com.br)</label
+    >
+    <input type="text" name="endereco_periodico" />
+
+    <label>Nome completo*</label>
+    <input type="text" name="nome_contratante" size="40" required />
+
+    <label>CPF*</label>
+    <input type="text" name="cpf_contratante" size="40" required />
+
+    <label>E-mail*</label>
+    <input type="email" name="email" size="40" required />
+
+    <label>Endereço completo com CEP*</label>
+    <input type="text" name="endereco_contratante" size="40" required />
+
+    <label>Telefone (com DDD)*</label>
+    <input type="tel" name="telefone_contratante" size="40" required />
+
+    <label>Condição de pagamento</label>
+    <select name="condicao_pagamento">
+      <option value="Anual (10% de desconto)" selected>
+        Anual (10% de desconto)
+      </option>
+      <option value="Semestral (5% de desconto)">
+        Semestral (5% de desconto)
+      </option>
+      <option value="Mensal">Mensal</option>
+    </select>
+
+    <p>
+      Se a revista ainda não está no SEER/OJS, indique abaixo os dados da pessoa
+      que irá cadastrar os demais papéis e que poderá fazer a configuração
+      inicial da revista.
+    </p>
+
+    <label>Nome*</label>
+    <input type="text" name="nome_editor" required />
+
+    <label>Email*</label>
+    <input type="email" name="endereço_eletronico_do_editor" required />
+
+    <h2>Contrato</h2>
+    <p>
+      Se preferir, uma cópia em PDF do contrato pode ser acessada
+
+      <a
+        href="https://periodicos.emnuvens.com.br/wp-content/uploads/2013/12/ContratoPeN.pdf"
+        >aqui</a
+      >
+    </p>
+
+    <iframe
+      src="https://periodicos.emnuvens.com.br/wp-content/uploads/2013/12/ContratoPeN.pdf"
+      width="900px"
+      height="320px"
+    >
+    </iframe>
+
+    <div>
+      <input type="checkbox" name="aceite_do_contrato" value="1" required />
+      <label> Li e aceito os termos do contrato.</label>
+    </div>
+
+    <input
+      type="hidden"
+      name="_subject"
+      value="Contratação PeN | Formulário preenchido pelo site"
+    />
+
+    <input
+      type="hidden"
+      name="_url"
+      value="https://periodicos.emnuvens.com.br/contratacao-por-pessoa-fisica/"
+    />
+
+    <input
+      type="hidden"
+      name="_next"
+      value="{{$.Site.BaseURL}}/agradecimento/"
+    />
+
+    <input type="hidden" name="_template" value="table" />
+
+    <button type="submit">Enviar</button>
+  </form>
+</div>

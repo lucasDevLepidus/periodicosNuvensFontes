@@ -1,0 +1,62 @@
+<header id="header">
+  <div class="containerHeader">
+    <figure class="containerImgLogo">
+      <a href="{{$.Site.BaseURL}}" class="linkIndexApplication">
+        <img
+          src="{{ .Site.Params.logos.logoPeriodicoEmNuvens }}"
+          alt="Periódicos em nuvens"
+        />
+      </a>
+    </figure>
+    <nav class="containerNavigationHeader">
+      <button
+        id="btnMobile"
+        aria-label="Abrir o menu de navegação"
+        aria-haspopup="true"
+        aria-controls="containerList"
+        aria-expanded="false"
+      >
+        <span id="iconMenu"> </span>
+      </button>
+      <ul class="containerList" role="menu de navegação">
+        {{ $current := . }} 
+        {{ range .Site.Menus.nav }} 
+        {{ $active := or ($current.IsMenuCurrent "nav" .) ($current.HasMenuCurrent "nav" .) }}
+        <li class="itens">
+          {{$active = or $active (eq .Name $current.Title) }}
+          <a href="{{ .URL }}" class="item">{{ .Name }}</a>
+        </li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btnMobile = document.getElementById('btnMobile');
+
+  function toggleMenu(event) {
+    if (event.type === 'touchstart') {
+      event.preventDefault();
+    }
+    const navigationMenu = document.querySelector('.containerNavigationHeader');
+    navigationMenu.classList.toggle('activeMenuMobile');
+
+    const menuActive = navigationMenu.classList.contains('activeMenuMobile');
+    event.currentTarget.setAttribute('aria-expanded', menuActive);
+    if (menuActive) {
+      event.currentTarget.setAttribute(
+        'aria-label',
+        'Fechar o menu de navegação'
+      );
+    } else {
+      event.currentTarget.setAttribute(
+        'aria-label',
+        'Abrir o menu de navegação'
+      );
+    }
+  }
+
+  btnMobile.addEventListener('click', toggleMenu);
+  btnMobile.addEventListener('touchstart', toggleMenu);
+</script>

@@ -1,0 +1,21 @@
+<script>
+  function initAccordionList() {
+    const contentServices = document.querySelectorAll('.contentServices > h3');
+    const title = document.querySelectorAll('h3');
+    const classActiveBlockquote = 'activeBlockquote';
+
+    if (contentServices) {
+      title[0].classList.add(classActiveBlockquote);
+      title[0].nextElementSibling.classList.add(classActiveBlockquote);
+      function activeAccordion() {
+        this.classList.toggle(classActiveBlockquote);
+        this.nextElementSibling.classList.toggle(classActiveBlockquote);
+      }
+
+      contentServices.forEach((item) => {
+        item.addEventListener('click', activeAccordion);
+      });
+    }
+  }
+  initAccordionList();
+</script>

@@ -1,0 +1,66 @@
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footerCol">
+        <ul class="containerListFooter">
+          <li class="itensListFooter">
+            <a href="/o-que-e/">O que é</a>
+          </li>
+          <li class="itensListFooter capitalize">
+            <a href="/quem-somos/">quem somos</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footerCol">
+        <ul class="containerListFooter">
+          <li class="itensListFooter capitalize">
+            <a href="/contribuicoes/">contribuições</a>
+          </li>
+          <li class="itensListFooter capitalize">
+            <a href="/clientes/">quem utiliza</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footerCol">
+        <ul class="containerListFooter">
+          <li class="itensListFooter capitalize">
+            <a href="/planos/">planos</a>
+          </li>
+          <li class="itensListFooter capitalize">
+            <a href="/solicitar-orcamento/">solicitar orçamento</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footerCol">
+        <ul class="containerListFooter">
+          <li class="itensListFooter capitalize">
+            <a href="/faq/">perguntas frequentes</a>
+          </li>
+          <li class="itensListFooter capitalize">
+            <a href="/contato/">contato</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footerCol">
+        <ul class="containerListFooter">
+          <li class="itensListFooter capitalize">
+            <a href="/contratar/">contratar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="footerCol">
+        <a href="https://lepidus.com.br" class="linkImg">
+          <img
+            src="{{ .Site.Params.logos.logoLepidus }}"
+            alt="Lepidus Tecnologia"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <span class="copyrightText"> {{ $.Site.Params.footer | markdownify }} </span>
+  </div>
+</footer>
